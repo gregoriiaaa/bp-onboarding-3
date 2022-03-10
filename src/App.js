@@ -44,19 +44,23 @@ function App() {
   return (
     <div className="App">
       <input
+        className="bar"
         placeholder="Name..."
         onChange={(event) => {
           setNewName(event.target.value);
         }}
       />
       <input
+        className="bar"
         type="number"
         placeholder="Age..."
         onChange={(event) => {
           setNewAge(event.target.value);
         }}
       />
-      <button onClick={createUser}>Create User</button>
+      <button className="button" onClick={createUser}>
+        Create User
+      </button>
       {users.map((user) => {
         return (
           <div>
@@ -64,6 +68,7 @@ function App() {
             <h1>Name: {user.name}</h1>
             <h1>Age: {user.age}</h1>
             <button
+              className="button"
               onClick={() => {
                 updateUser(user.id, user.age);
               }}
@@ -71,6 +76,7 @@ function App() {
               Increase Age
             </button>
             <button
+              className="button"
               onClick={() => {
                 deleteUser(user.id);
               }}
